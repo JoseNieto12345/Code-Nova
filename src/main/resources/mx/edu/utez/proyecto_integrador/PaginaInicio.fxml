@@ -30,7 +30,7 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="Subir" layoutX="257.0" layoutY="80.0" mnemonicParsing="false" onAction="#subir" text="Subir Archivo" />
-            <Label layoutX="210.0" layoutY="140.0" text="Solo se haceptan archivos .xlms">
+            <Label layoutX="210.0" layoutY="140.0" text="Solo se haceptan archivos .xlsx">
                <font>
                   <Font size="13.0" />
                </font>
