@@ -5,18 +5,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="mx.edu.utez.proyecto_integrador.PaginaInicioController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <AnchorPane prefHeight="97.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="97.0" prefWidth="600.0" style="-fx-background-color: E5EBF2;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="99.0" fitWidth="102.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="102.0" layoutX="7.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Img/Logo.png" />
+                  <Image url="@../../../../Img/CODENOVA.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="96.0" fitWidth="181.0" layoutX="451.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="80.0" fitWidth="170.0" layoutX="435.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../Img/PUT.jpg" />
+                  <Image url="@../../../../Img/Logo-utez.png" />
                </image>
             </ImageView>
             <Label graphicTextGap="12.0" layoutX="151.0" layoutY="30.0" text="Bienvenida Maestra">
@@ -27,7 +27,7 @@
          </children></AnchorPane>
    </top>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: E5EBF2;" BorderPane.alignment="CENTER">
          <children>
             <Button fx:id="Subir" layoutX="257.0" layoutY="80.0" mnemonicParsing="false" onAction="#subir" text="Subir Archivo" />
             <Label layoutX="210.0" layoutY="140.0" text="Solo se haceptan archivos .xlsx">

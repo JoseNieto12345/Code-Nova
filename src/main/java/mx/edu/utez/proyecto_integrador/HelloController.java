@@ -34,10 +34,13 @@ public class HelloController {
     private void inicio(ActionEvent event)   {
 
         if (user.getText().equals("Pepe") &&  pass.getText().equals("1234")) {
-            JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
-            title.setText("Bienvenido al sistema");
+
+
+
 
             try{
+                JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
+
                 Parent siguiente = FXMLLoader.load(getClass().getResource("PaginaInicio.fxml"));
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -49,8 +52,11 @@ public class HelloController {
                 stage.show();
 
 
-            }catch (Exception e){
-                System.out.println("Ocurrio un error");
+            }catch (IOException e){
+
+                System.out.println("Vales verga"+ e.getMessage());
+                e.printStackTrace();
+
             }
 
         }else{
