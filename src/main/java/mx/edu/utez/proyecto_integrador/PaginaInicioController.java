@@ -74,7 +74,7 @@ public class PaginaInicioController {
                 Parent root = loader.load();
 
                 PaginaconexcelController controller = loader.getController();
-                controller.main(archivoSeleccionado);
+                controller.initialize(archivoSeleccionado);
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
