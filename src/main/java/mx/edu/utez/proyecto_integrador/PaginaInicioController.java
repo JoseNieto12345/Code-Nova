@@ -20,22 +20,17 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.File;
 import java.io.FileInputStream;
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
-
+import java.util.Objects;
 
 public class PaginaInicioController {
 
     @FXML
-    private Button subir;
-
-
-
-
+    private Button Subir;
     //Metodo para recibir el excel
     @FXML
     private void subir(ActionEvent event) {
@@ -43,38 +38,24 @@ public class PaginaInicioController {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Selecciona un archivo Excel");
-
         // Filtro para archivos Excel
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Archivos Excel (*.xlsx)", "*.xlsx"),
                 new FileChooser.ExtensionFilter("Archivos Excel antiguos (*.xls)", "*.xls")
         );
-
         // Abre el diálogo de selección
         File archivoSeleccionado = fileChooser.showOpenDialog(new Stage());
-
-
-
-
-
         //Muestra error si el archivo no se carga correctamente
         if (archivoSeleccionado != null) {
-
             System.out.println("Archivo seleccionado: " + archivoSeleccionado.getAbsolutePath());
-
-
-
-
             //pasa el archivo a controllerconexcel
-
-
-
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Paginaconexcel.fxml"));
                 Parent root = loader.load();
-
                 PaginaconexcelController controller = loader.getController();
                 controller.initialize(archivoSeleccionado);
+
+
 
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(new Scene(root));
@@ -86,35 +67,11 @@ public class PaginaInicioController {
                 System.out.println("Vales verga"+ e.getMessage());
                 e.printStackTrace();
             }
-
-
-
             /*
-            try {
-                // Cargar el FXML del segundo controlador
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Paginaconexcel.fxml"));
-                Parent root = loader.load();
-
-                // Obtener el controlador del segundo FXML
-                PaginaconexcelController controller = loader.getController();
-
-                // Pasar el archivo al segundo controlador
-                controller.setArchivo(archivoSeleccionado);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-
-
-
             //Muestra un mensaje en pantalla de archivo creado correctamente
-
             try{
-                JOptionPane.showMessageDialog(null, "Archivo cargado correctamente");
-
-                Parent siguiente = FXMLLoader.load(getClass().getResource("Paginaconexcel.fxml"));
-
+                //JOptionPane.showMessageDialog(null, "Archivo cargado correctamente");
+                Parent siguiente = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Paginaconexcel.fxml")));
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 //Preparar la nueva esena
                 Scene esena = new Scene(siguiente);
@@ -122,21 +79,19 @@ public class PaginaInicioController {
                 stage.setScene(esena);
                 //asegurar que se vea
                 stage.show();
-
-
             }catch (IOException e){
-
                 System.out.println("Vales verga"+ e.getMessage());
                 e.printStackTrace();
-
             }
-             */
-
+            */
 
             // Aquí puedes seguir con lógica para leerlo con Apache POI
         } else {
             System.out.println("No se seleccionó ningún archivo.");
         }
     }
+
+
+
 
 }

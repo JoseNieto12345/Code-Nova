@@ -18,31 +18,20 @@ import java.io.IOException;
 public class HelloController {
     @FXML
     private Label welcomeText;
-
     @FXML
     private Label title;
     @FXML
     private TextField user;
-
     @FXML
     private PasswordField pass;
-
     @FXML
     private Button inicio;
-
     @FXML
     private void inicio(ActionEvent event)   {
-
         if (user.getText().equals("Pepe") &&  pass.getText().equals("1234")) {
-
-
-
-
             try{
                 JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
-
                 Parent siguiente = FXMLLoader.load(getClass().getResource("PaginaInicio.fxml"));
-
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 //Preparar la nueva esena
                 Scene esena = new Scene(siguiente);
@@ -50,23 +39,16 @@ public class HelloController {
                 stage.setScene(esena);
                 //asegurar que se vea
                 stage.show();
-
-
             }catch (IOException e){
 
                 System.out.println("Vales verga"+ e.getMessage());
                 e.printStackTrace();
 
             }
-
         }else{
             JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
         }
-
-
     }
-
-
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");

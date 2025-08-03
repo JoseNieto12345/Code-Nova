@@ -2,18 +2,26 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.utez.proyecto_integrador.PaginaconexcelController">
    <top>
-      <AnchorPane prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
+      <AnchorPane prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="documento" layoutX="86.0" layoutY="20.0" prefHeight="30.0" prefWidth="429.0" text="Label">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+         </children></AnchorPane>
    </top>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tablaMaestros" layoutX="12.0" layoutY="39.0" prefHeight="254.0" prefWidth="574.0">
+            <TableView fx:id="tablaMaestros" layoutX="12.0" layoutY="39.0" prefHeight="254.0" prefWidth="579.0">
               <columns>
-                <TableColumn fx:id="nombre_maestros" prefWidth="350.0" text="Nombre " />
-                <TableColumn fx:id="grado_maestros" minWidth="0.0" prefWidth="223.0" text="Tipo Docente" />
+                  <TableColumn fx:id="IDMaestro" prefWidth="106.0" text="ID" />
+                <TableColumn fx:id="nombre_maestros" prefWidth="227.0" text="Nombre " />
+                <TableColumn fx:id="grado_maestros" minWidth="0.0" prefWidth="315.0" text="Tipo Docente" />
               </columns>
             </TableView>
          </children></AnchorPane>
